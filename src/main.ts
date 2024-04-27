@@ -2,6 +2,7 @@ import { parse } from "graphql";
 
 window.__GRAPHQL__ = {
   parse: (source: string) => {
-    return parse(source);
+    const ast = parse(source);
+    return JSON.stringify(ast, null, 2);
   },
 };
